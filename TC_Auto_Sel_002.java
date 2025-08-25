@@ -26,9 +26,9 @@ public class TC_Auto_Sel_002 {
             );
 
             if (heading.getText().equals("Register Account")) {
-                System.out.println("✅ Verified: Matched the title - Register Account");
+                System.out.println(" Verified: Matched the title - Register Account");
             } else {
-                System.out.println("❌ Not Matched: Found - " + heading.getText());
+                System.out.println(" Not Matched: Found - " + heading.getText());
             }
 
             // 3. Click Continue without filling form (to trigger validations)
@@ -38,27 +38,27 @@ public class TC_Auto_Sel_002 {
             WebElement firstNameErr = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.cssSelector("#input-firstname + .text-danger")));
             if (firstNameErr.getText().contains("First Name must be between 1 and 32 characters")) {
-                System.out.println("✅ First Name length validation working");
+                System.out.println(" First Name length validation working");
             } else {
-                System.out.println("❌ Validation failed: " + firstNameErr.getText());
+                System.out.println(" Validation failed: " + firstNameErr.getText());
             }
 
             // 5. Validate Last Name
             WebElement lastNameErr = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.cssSelector("#input-lastname + .text-danger")));
             if (lastNameErr.getText().contains("Last Name must be between 1 and 32 characters")) {
-                System.out.println("✅ Last Name length validation working");
+                System.out.println(" Last Name length validation working");
             } else {
-                System.out.println("❌ Validation failed: " + lastNameErr.getText());
+                System.out.println(" Validation failed: " + lastNameErr.getText());
             }
 
             // 6. Validate Telephone
             WebElement telephoneErr = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.cssSelector("#input-telephone + .text-danger")));
             if (telephoneErr.getText().contains("Telephone must be between 3 and 32 characters")) {
-                System.out.println("✅ Telephone length validation working");
+                System.out.println(" Telephone length validation working");
             } else {
-                System.out.println("❌ Validation failed: " + telephoneErr.getText());
+                System.out.println(" Validation failed: " + telephoneErr.getText());
             }
 
             // 7. Enter Password and Confirm (4-20 chars)
@@ -84,9 +84,9 @@ public class TC_Auto_Sel_002 {
                 ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#content h1"))
             );
             if ("Your Account Has Been Created!".equals(success.getText().trim())) {
-                System.out.println("✅ Verified: Your Account Has Been Created!");
+                System.out.println(" Verified: Your Account Has Been Created!");
             } else {
-                System.out.println("❌ Registration failed - found: " + success.getText().trim());
+                System.out.println(" Registration failed - found: " + success.getText().trim());
             }
 
             // 11. Click Continue on success page
@@ -102,7 +102,7 @@ public class TC_Auto_Sel_002 {
 
             // 12. Click 'View your order history' under My Orders
             wait1.until(ExpectedConditions.elementToBeClickable(By.linkText("View your order history"))).click();
-            System.out.println("✅ Opened: View your order history");
+            System.out.println(" Opened: View your order history");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,3 +111,4 @@ public class TC_Auto_Sel_002 {
         }
     }
 }
+
